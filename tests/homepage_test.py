@@ -6,7 +6,7 @@ def test_request_example(client):
     response = client.get("/")
     assert b"Benchuan's First Bootstrap Site" in response.data
 
-def test_request_example(client):
+def test_about(client):
     """This makes the index page"""
     response = client.get("/about")
     assert b"Lorem ipsum dolor" in response.data
