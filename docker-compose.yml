@@ -1,22 +1,12 @@
 version: "3.2"
 services:
   flask:
-    build: ./app
-    image: kaw393939/flask:latest
-    container_name: python1
-    restart: always
-    environment:
-      - APP_NAME=flask
-    expose:
-      - 8080
-    stdin_open: true # docker run -i
-    tty: true        # docker run -t
-    volumes:
-      - ./app:/home/myuser
-  nginx:
-    image: kaw393939/nginx:latest
-    build: ./nginx
-    container_name: nginx1
+    build: .
     restart: always
     ports:
-      - "80:80"
+      - 80:5000
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t
+    command: ["flask", "run"]
+    volumes:
+      - .:/home/myuser
