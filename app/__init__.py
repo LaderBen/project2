@@ -11,4 +11,8 @@ def create_app():
     def index():
         return render_template('index.html')
 
+    @app.route("/about", methods=['GET'])
+    def about_get():
+        return render_template('about.html')
+
     return app
