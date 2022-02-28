@@ -1,5 +1,8 @@
-# Project Setup
-[![Production Workflow](https://github.com/laderben/docker_flask/actions/workflows/prod.yml/badge.svg)](https://github.com/laderben/docker_flask/actions/workflows/prod.yml)
+# Production Setup
+[![Production Workflow](https://github.com/LaderBen/project1/actions/workflows/prod.yml/badge.svg)](https://github.com/LaderBen/project1/actions/workflows/prod.yml)
+
+# Dev Setup
+[![Development Workflow](https://github.com/LaderBen/project1/actions/workflows/dev.yml/badge.svg)](https://github.com/LaderBen/project1/actions/workflows/dev.yml)
 
 ## Setting up CI/CD
 
