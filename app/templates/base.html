@@ -21,8 +21,8 @@
         <header class="mb-5">
             <!-- As a link -->
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <div class="container">
-                    <a class="navbar-brand" href="/">My Site</a>
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="/">Benchuan's Site</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -30,19 +30,19 @@
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a class="nav-link" aria-current="page" href="/">Home</a>
+                                <a class="nav-link active" id="home" onclick="acitivateTag(home)" href="/">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/about">About</a>
+                                <a class="nav-link" id="about" onclick="acitivateTag(about)" href="/about">About</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/git">Git</a>
+                                <a class="nav-link" id="git" onclick="acitivateTag(git)" href="/git">Git</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/docker">Docker</a>
+                                <a class="nav-link" id="docker" onclick="acitivateTag(docker)" href="/docker">Docker</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/flask">Flask</a>
+                                <a class="nav-link" id="flask" onclick="acitivateTag(flask)" href="/flask">Flask</a>
                             </li>
                         </ul>
                     </div>
