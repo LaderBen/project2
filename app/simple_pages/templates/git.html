@@ -1,21 +1,52 @@
 {% extends "base.html" %}
 {% block content %}
-    Page 1
     <div class="row">
-        <div class="col-8">
+        <div class="col-10">
             <h1>Git</h1>
-            <h2>Branch</h2>
-            <p></p>
+            <span></span>
+            <h2>Branches</h2>
+            <p class="h5 mvRight">
+                Branch in Git is similar to the branch of a tree. Analogically, a tree branch is attached to the central
+                part of the tree called the trunk. While branches can generate and fall off, the trunk remains compact
+                and is the only part by which we can say the tree is alive and standing. Similarly, a branch in Git is a
+                way to keep developing and coding a new feature or modification to the software and still not affecting
+                the main part of the project. We can also say that branches create another line of development in the
+                project. The primary or default branch in Git is the master branch (similar to a trunk of the tree). As
+                soon as the repository creates, so does the main branch (or the default branch).
+            </p>
+            <p class="h5 mvRight">
+                Branch in Git is "lightweight". Light in terms of the data they carry and the little mess they create.
+                In
+                other version control systems such as SVN, creating branches is a cumbersome process. Moreover, once the
+                branch creates, the whole main code from the main branch gets copied to the newly created branch.
+                Whereas, in Git, the code is separated only from the point of creation of the branch. Once the creation
+                of the new branch happens, we can switch to this branch and start development.
+            </p>
             <h2>Merge</h2>
-            <p></p>
+            <p class="h5 mvRight">
+                Merging is a common practice for developers using version control systems. Whether branches are created
+                for testing, bug fixes, or other reasons, merging commits changes to another location. To be more
+                specific, merging takes the contents of a source branch and integrates them with a target branch. In
+                this process, only the target branch is changed. The source branch history remains the same.
+            </p>
             <h2>Commit</h2>
-            <p></p>
+            <p class="h5 mvRight">
+                The "commit" command is used to save your changes to the local repository.
+            </p>
             <h2>Tags</h2>
-            <p></p>
+            <p class="h5 mvRight">
+                Tags are ref's that point to specific points in Git history. Tagging is generally used to capture a
+                point
+                in history that is used for a marked version release (i.e. v1.0.1). A tag is like a branch that doesn’t
+                change. Unlike branches, tags, after being created, have no further history of commits
+            </p>
             <h2>Repositories</h2>
-            <p></p>
+            <p class="h5 mvRight">
+                Repositories in GIT contain a collection of files of various different versions of a Project. These
+                files are imported from the repository into the local server of the user for further updations and
+                modifications in the content of the file.
+            </p>
 
-        <div class="col">some text</div>
 
-    </div>
+        </div>
 {% endblock %}
