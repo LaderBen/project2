@@ -1,4 +1,67 @@
 {% extends "base.html" %}
 {% block content %}
-    Docker
+    <div class="row">
+        <div class="col-10">
+            <h1 class="underline">Docker</h1>
+
+            <h2>What is container?</h2>
+            <p class="h6 mvRight">
+                The industry standard today is to use Virtual Machines (VMs) to run software applications. VMs run
+                applications
+                inside a guest Operating System, which runs on virtual hardware powered by the server’s host OS.
+            </p>
+            <p class="h6 mvRight">
+                VMs are great at providing full process isolation for applications: there are very few ways a problem in
+                the
+                host operating system can affect the software running in the guest operating system, and vice-versa. But
+                this
+                isolation comes at great cost — the computational overhead spent virtualizing hardware for a guest OS to
+                use is
+                substantial.
+            </p>
+            <p class="h6 mvRight">
+                Containers take a different approach: by leveraging the low-level mechanics of the host operating
+                system,
+                containers provide most of the isolation of virtual machines at a fraction of the computing power.
+            </p>
+
+            <h2>What is image?</h2>
+            <p class="h6 mvRight">
+                An image is a read-only template with instructions for creating a Docker container. Often, an image is
+                based on another image, with some additional customization. For example, you may build an image which is
+                based on the ubuntu image, but installs the Apache web server and your application, as well as the
+                configuration details needed to make your application run.
+            </p>
+            <p class="h6 mvRight">
+                You might create your own images or you might only use those created by others and published in a
+                registry. To build your own image, you create a Dockerfile with a simple syntax for defining the steps
+                needed to create the image and run it. Each instruction in a Dockerfile creates a layer in the image.
+                When you change the Dockerfile and rebuild the image, only those layers which have changed are rebuilt.
+                This is part of what makes images so lightweight, small, and fast, when compared to other virtualization
+                technologies.
+            </p>
+
+            <h2>Commands to use Docker</h2>
+            <p class="h6 mvRight">
+                docker run [option] &lt;image name&gt;<br>
+                docker ps<br>
+                docker rm &lt;contaienr ID&gt;<br>
+                docker rmi &lt;image ID&gt;<br>
+                docker images<br>
+                docker stop<br>
+                docker build [option] &lt;image&gt;<br>
+                docker push<br>
+                docker exec -it &lt;contaienr ID&gt; /bin/bash <br>
+            </p>
+
+            <h2>How to start the project and access the container?</h2>
+            <p class="h6 mvRight">
+                1. To running a project you can use docker run command <br>
+                    <span class="mvRight">docker run -dp 80:80 docker/getting-started </span><br>
+                2. To access the container you can use docker exec command <br>
+                    <span class="mvRight">docker exec -it &lt;container ID&gt; /bin/bash</span><br>
+            </p>
+        </div>
+    </div>
+
 {% endblock %}
