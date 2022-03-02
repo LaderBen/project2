@@ -5,3 +5,18 @@ font-size: 100%;
 .mvRight {
     padding-left: 5%;
 }
+
+.underline {
+    border-bottom: 1px solid black;
+}
+
+.codeContainer{
+    border: 1px solid black;
+    border-radius: 15px;
+    margin-left: 5%;
+    padding: 1% 5%;
+    background: dimgray;
+    color: white;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
