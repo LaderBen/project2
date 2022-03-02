@@ -1,20 +1,75 @@
 {% extends "base.html" %}
 {% block content %}
     <div class="row">
-        <div class="col-8">
-            <h1>Flask</h1>
-            <h2>Branch</h2>
-            <p></p>
-            <h2>Merge</h2>
-            <p></p>
-            <h2>Commit</h2>
-            <p></p>
-            <h2>Tags</h2>
-            <p></p>
-            <h2>Repositories</h2>
-            <p></p>
+        <div class="col-10">
+            <h1 class="underline">Flask</h1>
+            <h2>Create simple page</h2>
+            <div class="h6 mvRight">
+                1. To create a simple page we need to find templates direct which in app -> templates and create a html
+                file name simple.html<br>
+                2. Edit the simple.html file and put the basic html element
+                <div class="codeContainer">
+                    &lt;!doctype html&gt;<br>
+                    &lt;html lang="en"&gt;<br>
+                    &lt;head&gt;<br>
+                    &lt;meta charset="UTF-8"&gt;<br>
+                    &lt;meta name="viewport"<br>
+                    content="width=device-width, user-scalable=no, initial-scale=1.0,<br>
+                    maximum-scale=1.0, minimum-scale=1.0"&gt;<br>
+                    &lt;meta http-equiv="X-UA-Compatible" content="ie=edge"&gt;<br>
+                    &lt;title>Document&lt;/title&gt;<br>
+                    &lt;/head&gt;<br>
+                    &lt;body&gt;<br>
+                    Hello World<br>
+                    &lt;/body&gt;<br>
+                    &lt;/html&gt;<br>
+                </div>
+                3. To test the page we need create a direct under the project direct named tests also we need to create
+                2 python files conftest.py and pages_test.py<br>
+                <span class="mvRight">conftest.py is the configuration setup</span>
+                <div class="codeContainer">
+                    import pytest<br>
+                    from app import create_app<br>
+                    <br>
+                    @pytest.fixture()<br>
+                    def application():<br>
+                        application = create_app()<br>
+                        application.config.update({<br>
+                        "TESTING": True,<br>
+                        })<br>
+                        yield application<br>
+                    <br>
+                    @pytest.fixture()<br>
+                    def client(application):<br>
+                        return application.test_client()<br>
+                    <br>
+                    @pytest.fixture()<br>
+                    def runner(application):<br>
+                        return application.test_cli_runner()<br>
+                </div>
+                <span class="mvRight">To test the project we need set the test rule in simple_pages_test.py </span>
+                <div class="codeContainer">
+                    def test_request_index(client):<br>
+                        response = client.get("/")<br>
+                        assert response.status_code == 200<br>
+                        assert b"Index Page" in response.data<br>
+<br>
+                    def test_request_git_page(client):<br>
+                        response = client.get("/git")<br>
+                        assert response.status_code == 200<br>
+                        assert b"Git" in response.data<br>
+<br>
+                    def test_request_docker_page(client):<br>
+                        response = client.get("/docker")<br>
+                        assert response.status_code == 200<br>
+                        assert b"Docker" in response.data<br>
+<br>
+                    def test_request_flask_page(client):<br>
+                        response = client.get("/flask")<br>
+                        assert response.status_code == 200<br>
+                        assert b"Flask" in response.data<br>
+                </div>
+            </div>
 
-        <div class="col">some text</div>
-
-    </div>
+        </div>
 {% endblock %}
