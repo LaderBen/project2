@@ -24,3 +24,8 @@ def test_request_flask_page(client):
     response = client.get("/flask")
     assert response.status_code == 200
     assert b"Flask" in response.data
+
+def test_request_cicd_page(client):
+        response = client.get("/CICD")
+        assert response.status_code == 200
+        assert b"CI/CD" in response.data

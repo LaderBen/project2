@@ -11,8 +11,8 @@ font-size: 100%;
 }
 
 .codeContainer{
-    border: 1px solid black;
-    border-radius: 15px;
+    border: 1px solid darkslateblue;
+    border-radius: 5px;
     margin-left: 5%;
     padding: 1% 5%;
     background: dimgray;
