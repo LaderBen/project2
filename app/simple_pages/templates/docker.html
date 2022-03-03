@@ -42,7 +42,7 @@
             </p>
 
             <h2>Commands to use Docker</h2>
-            <p class="h6 mvRight">
+            <div class=" mvRight codeContainer">
                 docker run [option] &lt;image name&gt;<br>
                 docker ps<br>
                 docker rm &lt;contaienr ID&gt;<br>
@@ -52,14 +52,14 @@
                 docker build [option] &lt;image&gt;<br>
                 docker push<br>
                 docker exec -it &lt;contaienr ID&gt; /bin/bash <br>
-            </p>
+            </div>
 
             <h2>How to start the project and access the container?</h2>
             <p class="h6 mvRight">
                 1. To running a project you can use docker run command <br>
-                    <span class="mvRight">docker run -dp 80:80 docker/getting-started </span><br>
+                <span class="mvRight">docker run -dp 80:80 docker/getting-started </span><br>
                 2. To access the container you can use docker exec command <br>
-                    <span class="mvRight">docker exec -it &lt;container ID&gt; /bin/bash</span><br>
+                <span class="mvRight">docker exec -it &lt;container ID&gt; /bin/bash</span><br>
             </p>
         </div>
     </div>

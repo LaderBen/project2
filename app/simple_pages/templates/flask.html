@@ -3,73 +3,111 @@
     <div class="row">
         <div class="col-10">
             <h1 class="underline">Flask</h1>
-            <h2>Create simple page</h2>
+            <h2>Create simple page and test it</h2>
             <div class="h6 mvRight">
                 1. To create a simple page we need to find templates direct which in app -> templates and create a html
                 file name simple.html<br>
                 2. Edit the simple.html file and put the basic html element
                 <div class="codeContainer">
-                    &lt;!doctype html&gt;<br>
-                    &lt;html lang="en"&gt;<br>
-                    &lt;head&gt;<br>
-                    &lt;meta charset="UTF-8"&gt;<br>
-                    &lt;meta name="viewport"<br>
-                    content="width=device-width, user-scalable=no, initial-scale=1.0,<br>
-                    maximum-scale=1.0, minimum-scale=1.0"&gt;<br>
-                    &lt;meta http-equiv="X-UA-Compatible" content="ie=edge"&gt;<br>
-                    &lt;title>Document&lt;/title&gt;<br>
-                    &lt;/head&gt;<br>
-                    &lt;body&gt;<br>
-                    Hello World<br>
-                    &lt;/body&gt;<br>
-                    &lt;/html&gt;<br>
+                    <pre>
+&lt;!doctype html&gt;<br>
+&lt;html lang="en"&gt;<br>
+    &lt;head&gt;<br>
+        &lt;meta charset="UTF-8"&gt;<br>
+        &lt;meta name="viewport"<br>
+        content="width=device-width, user-scalable=no, initial-scale=1.0,<br>
+        maximum-scale=1.0, minimum-scale=1.0"&gt;<br>
+        &lt;meta http-equiv="X-UA-Compatible" content="ie=edge"&gt;<br>
+        &lt;title>Document&lt;/title&gt;<br>
+    &lt;/head&gt;<br>
+    &lt;body&gt;<br>
+        Hello World<br>
+    &lt;/body&gt;<br>
+&lt;/html&gt;
+                    </pre>
+
                 </div>
                 3. To test the page we need create a direct under the project direct named tests also we need to create
                 2 python files conftest.py and pages_test.py<br>
                 <span class="mvRight">conftest.py is the configuration setup</span>
                 <div class="codeContainer">
-                    import pytest<br>
-                    from app import create_app<br>
-                    <br>
-                    @pytest.fixture()<br>
-                    def application():<br>
-                        application = create_app()<br>
-                        application.config.update({<br>
-                        "TESTING": True,<br>
-                        })<br>
-                        yield application<br>
-                    <br>
-                    @pytest.fixture()<br>
-                    def client(application):<br>
-                        return application.test_client()<br>
-                    <br>
-                    @pytest.fixture()<br>
-                    def runner(application):<br>
-                        return application.test_cli_runner()<br>
+                    <pre>
+import pytest<br>
+from app import create_app<br>
+<br>
+@pytest.fixture()<br>
+def application():<br>
+    application = create_app()<br>
+    application.config.update({<br>
+        "TESTING": True,<br>
+    })<br>
+    yield application<br>
+<br>
+@pytest.fixture()<br>
+def client(application):<br>
+    return application.test_client()<br>
+<br>
+@pytest.fixture()<br>
+def runner(application):<br>
+    return application.test_cli_runner()
+                    </pre>
+
                 </div>
                 <span class="mvRight">To test the project we need set the test rule in simple_pages_test.py </span>
                 <div class="codeContainer">
-                    def test_request_index(client):<br>
-                        response = client.get("/")<br>
-                        assert response.status_code == 200<br>
-                        assert b"Index Page" in response.data<br>
+                    <pre>
+def test_request_index(client):<br>
+    response = client.get("/")<br>
+    assert response.status_code == 200<br>
+    assert b"Index Page" in response.data<br>
 <br>
-                    def test_request_git_page(client):<br>
-                        response = client.get("/git")<br>
-                        assert response.status_code == 200<br>
-                        assert b"Git" in response.data<br>
+def test_request_git_page(client):<br>
+    response = client.get("/git")<br>
+    assert response.status_code == 200<br>
+    assert b"Git" in response.data<br>
 <br>
-                    def test_request_docker_page(client):<br>
-                        response = client.get("/docker")<br>
-                        assert response.status_code == 200<br>
-                        assert b"Docker" in response.data<br>
+def test_request_docker_page(client):<br>
+    response = client.get("/docker")<br>
+    assert response.status_code == 200<br>
+    assert b"Docker" in response.data<br>
 <br>
-                    def test_request_flask_page(client):<br>
-                        response = client.get("/flask")<br>
-                        assert response.status_code == 200<br>
-                        assert b"Flask" in response.data<br>
+def test_request_flask_page(client):<br>
+    response = client.get("/flask")<br>
+    assert response.status_code == 200<br>
+    assert b"Flask" in response.data
+</pre>
+                </div>
+                4. After edited 2 files you can run the following command below in the container's terminal
+                <div class="codeContainer">
+                    <pre>
+pytest --pylint --cov
+                    </pre>
                 </div>
             </div>
-
+            <h2>File structure of the Flask project</h2>
+            <div class="h5 mvRight">
+                 <pre>
+Project Root Folder <- Root of the project<br>
+    .github Folder <- github workflow action setup<br>
+                workflows Folder <- workflow setup<br>
+                                dev.yml <- development workflow setup<br>
+                                prod.yml <- production workflow setup <br>
+    .pytest_cache Folder <- pytest cache<br>
+    app Folder <- Application source code<br>
+                static Folder <- it contains static resource like css, images and js<br>
+                            css Folder <- to store css style sheet<br>
+                            images Folder <- to store static image of the pages<br>
+                            js Folder <- to store javaScript file<br>
+                templates <- it contains html file<br>
+                __init__.py <- program entry to initialize the project<br>
+                run.py <- for running project<br>
+    tests Folder <- it contain the test rule to test the project to make sure it doesn't get error<br>
+    docker-compose.yml <- Orchestration file that contains the configuration to develop locally, it<br>
+                     overrides the Dockerfile to run the flask development server instead of running<br>
+                     the gunicorn server that is used for hosting on Heroku<br>
+    Dockerfile <- File used to create an image to run in a container that runs the program<br>
+                 </pre>
+            </div>
         </div>
+    </div>
 {% endblock %}
