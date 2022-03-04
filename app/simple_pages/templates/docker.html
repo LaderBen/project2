@@ -42,25 +42,87 @@
             </p>
 
             <h2>Commands to use Docker</h2>
-            <div class=" mvRight codeContainer">
-                docker run [option] &lt;image name&gt;<br>
+            <p class="mvRight">To running a docker image you can use docker run command as following example</p>
+            <pre>
+                -d - run the container in detached mode (in the background)
+                -p 80:80 - map port 80 of the host to port 80 in the container
+                docker/getting-started - the image to use
+            </pre>
+
+            <div class="mvRight codeContainer">
+                docker run -dp 80:80 docker/getting-started<br>
+            </div>
+
+            <p class="mvRight">To see containers that currently running you can use docker ps command, and it will show
+                the Container id which will be helpful when you want to stop the container.</p>
+            <div class="mvRight codeContainer">
                 docker ps<br>
-                docker rm &lt;contaienr ID&gt;<br>
+            </div>
+
+            <p class="mvRight">To stop the containers that you want stop, you can use docker stop command</p>
+            <div class="mvRight codeContainer">
+                docker stop &lt;container ID><br>
+            </div>
+
+            <p class="mvRight">If you want to delete the container you can use docker rm command</p>
+            <pre>
+                notice: If the container is currently running you need to stop first.
+            </pre>
+            <div class="mvRight codeContainer">
+                docker rm &lt;container ID&gt;<br>
+            </div>
+            <p class="mvRight">If you want to delete the Images you can use docker rmi command</p>
+            <pre>
+                notice: If the image is currently running you need to stop first.
+                        To show the image ID you need run docker images command.
+            </pre>
+            <div class="mvRight codeContainer">
                 docker rmi &lt;image ID&gt;<br>
+            </div>
+
+            <p class="mvRight">To show images that currently exist in local</p>
+            <div class="mvRight codeContainer">
                 docker images<br>
-                docker stop<br>
-                docker build [option] &lt;image&gt;<br>
-                docker push<br>
-                docker exec -it &lt;contaienr ID&gt; /bin/bash <br>
+                docker image ls
+            </div>
+
+            <p class="mvRight">If you need to build an image from a Dockerfile, you can use docker build command</p>
+            <div class="mvRight codeContainer">
+                docker build [option] PATH | URL | -<br>
+            </div>
+            <p class="mvRight">To share an image or a repository to a registry you can use docker push command</p>
+            <pre>
+                notice: You need to create a repo in Docker Hub first
+                            1. Sign up or Sign in to Docker Hub.
+                            2. Click the Create Repository button.
+                            3. Fill the repo name. Make sure the Visibility is Public.
+                            4. Click the Create button!
+                        If you want share image please use "docker image push NAME[:TAG]" command.
+            </pre>
+            <div class="mvRight codeContainer">
+                docker push [OPTIONS] NAME[:TAG]<br>
+            </div>
+
+            <p class="mvRight">If you want to access the container or run a command in running container you can use
+                "docker exec" command</p>
+            <div class="mvRight codeContainer">
+                docker exec -it &lt;container ID&gt; /bin/bash <br>
             </div>
 
             <h2>How to start the project and access the container?</h2>
             <p class="h6 mvRight">
                 1. To running a project you can use docker run command <br>
-                <span class="mvRight">docker run -dp 80:80 docker/getting-started </span><br>
-                2. To access the container you can use docker exec command <br>
-                <span class="mvRight">docker exec -it &lt;container ID&gt; /bin/bash</span><br>
             </p>
+            <div class="codeContainer">
+                docker run -dp 80:80 docker/getting-started
+            </div>
+            <p class="h6 mvRight">
+                2. To access the container you can use docker exec command <br>
+            </p>
+
+            <div class="codeContainer">
+                docker exec -it &lt;container ID&gt; /bin/bash
+            </div>
         </div>
     </div>
 
