@@ -29,20 +29,20 @@
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav">
-                            <li class="nav-item">
-                                <a class="nav-link active" href="/">Home</a>
+                            <li class="nav-item" >
+                                <a class="nav-link {% if index %}{{ 'active' }}{% endif %}" id="home" href="/" onclick="highlight('home')">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/git">Git</a>
+                                <a class="nav-link {% if git %}{{ 'active' }}{% endif %}"  id="git" href="/git" onclick="highlight('git')">Git</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/docker">Docker</a>
+                                <a class="nav-link {% if docker %}{{ 'active' }}{% endif %}" id="docker" href="/docker" onclick="highlight('docker')">Docker</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/flask">Flask</a>
+                                <a class="nav-link {% if flask %}{{ 'active' }}{% endif %}" id="flask" href="/flask" onclick="highlight('flask')">Flask</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/CICD">CI/CD</a>
+                                <a class="nav-link {% if CICD %}{{ 'active' }}{% endif %}" id="CICD" href="/CICD" onclick="highlight('CICD')">CI/CD</a>
                             </li>
                         </ul>
                     </div>
