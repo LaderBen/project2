@@ -29,6 +29,21 @@ def test_calculator_add_method():
     calculator = Calculator()
     assert calculator.add(1) == 1
 
+
+def test_calculator_multiply_method():
+    """Testing the multiply function"""
+    cal = Calculator()
+    assert cal.multiply(1, 1) == 1
+
+
+def test_calculator_divide_method():
+    """Testing the divide method in Calculator"""
+    calculator = Calculator()
+
+    assert calculator.divide(4, 2) == 2
+    assert calculator.divide(4, 0) == 'You cannot divided by 0'
+
+
 def test_calculator_subtract_method():
     """Testing the Calculator Subtract"""
     calculator = Calculator()
