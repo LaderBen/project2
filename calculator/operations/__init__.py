@@ -1,7 +1,7 @@
 """These are the Operation Classes"""
 
 
-class Addition:
+class Add:
     """This is the addition class"""
 
     @staticmethod
@@ -10,7 +10,7 @@ class Addition:
         return value_1 + value_2
 
 
-class Subtraction:
+class Subtract:
     """This is the subtraction class"""
 
     @staticmethod
@@ -19,7 +19,7 @@ class Subtraction:
         return value_1 - value_2
 
 
-class Multiplication:
+class Multiply:
     """This is the Multiplication class"""
 
     @staticmethod
@@ -27,7 +27,7 @@ class Multiplication:
         """multiply method"""
         return value_1 * value_2
 
-class Divition:
+class Divide:
     """This is the Divition class"""
 
     @staticmethod

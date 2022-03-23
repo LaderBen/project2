@@ -1,38 +1,48 @@
 {% extends "base.html" %}
 {% block content %}
     <div class="row">
-        <div class="col-10">
-            <h1 class="underline">Docker</h1>
+        <h1 class="underline">Docker</h1>
 
-            <h2>What is container?</h2>
-            <p class="h6 mvRight">
+        <h2>What is container?</h2>
+        <div class="col-6">
+            <p class="h5">
                 The industry standard today is to use Virtual Machines (VMs) to run software applications. VMs run
                 applications
                 inside a guest Operating System, which runs on virtual hardware powered by the server’s host OS.
             </p>
-            <p class="h6 mvRight">
-                VMs are great at providing full process isolation for applications: there are very few ways a problem in
+            <p class="h5">
+                VMs are great at providing full process isolation for applications: there are very few ways a
+                problem in
                 the
-                host operating system can affect the software running in the guest operating system, and vice-versa. But
+                host operating system can affect the software running in the guest operating system, and vice-versa.
+                But
                 this
-                isolation comes at great cost — the computational overhead spent virtualizing hardware for a guest OS to
+                isolation comes at great cost — the computational overhead spent virtualizing hardware for a guest
+                OS to
                 use is
                 substantial.
             </p>
-            <p class="h6 mvRight">
+        </div>
+        <div class="col-4">
+            <p class="h5">
                 Containers take a different approach: by leveraging the low-level mechanics of the host operating
                 system,
                 containers provide most of the isolation of virtual machines at a fraction of the computing power.
             </p>
+        </div>
 
-            <h2>What is image?</h2>
-            <p class="h6 mvRight">
+
+        <h2>What is image?</h2>
+        <div class="col-5">
+            <p class="h5">
                 An image is a read-only template with instructions for creating a Docker container. Often, an image is
                 based on another image, with some additional customization. For example, you may build an image which is
                 based on the ubuntu image, but installs the Apache web server and your application, as well as the
                 configuration details needed to make your application run.
             </p>
-            <p class="h6 mvRight">
+        </div>
+        <div class="col-6">
+            <p class="h5">
                 You might create your own images or you might only use those created by others and published in a
                 registry. To build your own image, you create a Dockerfile with a simple syntax for defining the steps
                 needed to create the image and run it. Each instruction in a Dockerfile creates a layer in the image.
@@ -40,89 +50,138 @@
                 This is part of what makes images so lightweight, small, and fast, when compared to other virtualization
                 technologies.
             </p>
+        </div>
 
-            <h2>Commands to use Docker</h2>
-            <p class="mvRight">To running a docker image you can use docker run command as following example</p>
+
+        <h2>Commands to use Docker</h2>
+        <h3>Running docker container</h3>
+        <div class="col-5">
+            <p class=" ">To running a docker image you can use docker run command as following example</p>
             <pre>
-                -d - run the container in detached mode (in the background)
-                -p 80:80 - map port 80 of the host to port 80 in the container
-                docker/getting-started - the image to use
+-d - run the container in detached mode (in the background)
+-p 80:80 - map port 80 of the host to port 80 in the container
+docker/getting-started - the image to use
             </pre>
+        </div>
 
-            <div class="mvRight codeContainer">
+        <div class="col-5">
+            <div class="codeContainer">
                 docker run -dp 80:80 docker/getting-started<br>
             </div>
+        </div>
 
-            <p class="mvRight">To see containers that currently running you can use docker ps command, and it will show
+        <h3>Show running container</h3>
+        <div class="col-5">
+            <p class=" ">To see containers that currently running you can use docker ps command, and it will show
                 the Container id which will be helpful when you want to stop the container.</p>
-            <div class="mvRight codeContainer">
+        </div>
+        <div class="col-5">
+            <div class="  codeContainer">
                 docker ps<br>
             </div>
+        </div>
 
-            <p class="mvRight">To stop the containers that you want stop, you can use docker stop command</p>
-            <div class="mvRight codeContainer">
+        <h3>Stop running container</h3>
+        <div class="col-5">
+            <p class=" ">To stop the containers that you want stop, you can use docker stop command</p>
+        </div>
+        <div class="col-5">
+            <div class="  codeContainer">
                 docker stop &lt;container ID><br>
             </div>
+        </div>
 
-            <p class="mvRight">If you want to delete the container you can use docker rm command</p>
+        <h3>Remove container</h3>
+        <div class="col-5">
+            <p class=" ">If you want to delete the container you can use docker rm command</p>
             <pre>
-                notice: If the container is currently running you need to stop first.
+notice: If the container is currently running you need to stop first.
             </pre>
-            <div class="mvRight codeContainer">
+        </div>
+        <div class="col-5">
+            <div class="  codeContainer">
                 docker rm &lt;container ID&gt;<br>
             </div>
-            <p class="mvRight">If you want to delete the Images you can use docker rmi command</p>
+        </div>
+
+        <h3>Remove image</h3>
+        <div class="col-5">
+            <p class=" ">If you want to delete the Images you can use docker rmi command</p>
             <pre>
-                notice: If the image is currently running you need to stop first.
-                        To show the image ID you need run docker images command.
+notice: If the image is currently running you need to stop first.
+        To show the image ID you need run docker images command.
             </pre>
-            <div class="mvRight codeContainer">
+        </div>
+        <div class="col-5">
+            <div class="  codeContainer">
                 docker rmi &lt;image ID&gt;<br>
             </div>
+        </div>
 
-            <p class="mvRight">To show images that currently exist in local</p>
-            <div class="mvRight codeContainer">
+        <h3>Show exist images</h3>
+        <div class="col-5">
+            <p class=" ">To show images that currently exist in local</p>
+        </div>
+        <div class="col-5">
+            <div class="  codeContainer">
                 docker images<br>
                 docker image ls
             </div>
+        </div>
 
-            <p class="mvRight">If you need to build an image from a Dockerfile, you can use docker build command</p>
-            <div class="mvRight codeContainer">
+        <h3>Build image</h3>
+        <div class="col-5">
+            <p class=" ">If you need to build an image from a Dockerfile, you can use docker build command</p>
+        </div>
+        <div class="col-5">
+            <div class="  codeContainer">
                 docker build [option] PATH | URL | -<br>
             </div>
-            <p class="mvRight">To share an image or a repository to a registry you can use docker push command</p>
+        </div>
+
+        <h3>Share your image</h3>
+        <div class="col-5">
+            <p class=" ">To share an image or a repository to a registry you can use docker push command</p>
             <pre>
-                notice: You need to create a repo in Docker Hub first
-                            1. Sign up or Sign in to Docker Hub.
-                            2. Click the Create Repository button.
-                            3. Fill the repo name. Make sure the Visibility is Public.
-                            4. Click the Create button!
-                        If you want share image please use "docker image push NAME[:TAG]" command.
+notice: You need to create a repo in Docker Hub first
+    1. Sign up or Sign in to Docker Hub.
+    2. Click the Create Repository button.
+    3. Fill the repo name. Make sure the Visibility is Public.
+    4. Click the Create button!
+If you want share image please use "docker image push NAME[:TAG]" command.
             </pre>
-            <div class="mvRight codeContainer">
+        </div>
+        <div class="col-5">
+            <div class="  codeContainer">
                 docker push [OPTIONS] NAME[:TAG]<br>
             </div>
+        </div>
 
-            <p class="mvRight">If you want to access the container or run a command in running container you can use
+        <h3>Access your container</h3>
+        <div class="col-5">
+            <p class=" ">If you want to access the container or run a command in running container you can use
                 "docker exec" command</p>
-            <div class="mvRight codeContainer">
+        </div>
+        <div class="col-5">
+            <div class="  codeContainer">
                 docker exec -it &lt;container ID&gt; /bin/bash <br>
             </div>
+        </div>
 
-            <h2>How to start the project and access the container?</h2>
-            <p class="h6 mvRight">
-                1. To running a project you can use docker run command <br>
-            </p>
-            <div class="codeContainer">
-                docker run -dp 80:80 docker/getting-started
-            </div>
-            <p class="h6 mvRight">
-                2. To access the container you can use docker exec command <br>
-            </p>
+        <h2>How to start the project and access the container?</h2>
 
-            <div class="codeContainer">
-                docker exec -it &lt;container ID&gt; /bin/bash
-            </div>
+        <p class="h6  ">
+            1. To running a project you can use docker run command <br>
+        </p>
+        <div class="codeContainer">
+            docker run -dp 80:80 docker/getting-started
+        </div>
+        <p class="h6  ">
+            2. To access the container you can use docker exec command <br>
+        </p>
+
+        <div class="codeContainer">
+            docker exec -it &lt;container ID&gt; /bin/bash
         </div>
     </div>
 
