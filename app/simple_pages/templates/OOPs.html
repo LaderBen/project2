@@ -1,0 +1,185 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1 class="underline">Object-Oriented Program</h1>
+    <div class="row">
+        <h2>Introduction</h2>
+        <p>
+            Nowadays, Object-Oriented Program (OOP) is a very common programing method which implement in the whole
+            web
+            development industry, the purpose of this article is helping to understand the basic concept in
+            Object-Oriented Program.
+        </p>
+        <p>
+            In reality, we always call a thing by it name for example, a cat, a dog, a desk etc. All of these are
+            objects. Let's talk about a car, the first thing that come up our mind is it has 4 wheels and an engine
+            where it powers comes from. To control the speed of this car we need an accelerator and a break
+            peddle. To handling the direction of the car it should have a steering wheel.
+        </p>
+
+        <h2>The principles of OOP</h2>
+        <p>
+            There are 4 principles of object-oriented programming which are encapsulation, abstraction, inheritance,
+            and polymorphism. These words may sound scary for a junior developer. And the complex, excessively long
+            explanations in Wikipedia sometimes double the confusion. But don't worry I will explain each of this 4
+            conception to with my simple calculation program.
+        </p>
+
+        <!-- Encapsulation -->
+        <h3>Encapsulation</h3>
+        <div class="col-7">
+            <p>
+                First of first, a calculator should have 4 operations which are addition, subtraction, Multiplication,
+                Division. To get a result we need an attribute or a buffer to store the result and a function to show
+                the result what it is after calculation.
+            </p>
+            <p>
+                Encapsulation is achieved when each object keeps its state private, inside a class. Other objects don’t
+                have direct access to this state. Instead, they can only call a list of public functions — called
+                methods.
+            </p>
+        </div>
+        <div class="col">
+            <img src="{{ url_for('static', filename='images/Encapsulation.png') }}" alt="">
+        </div>
+
+        <!-- Abstraction -->
+        <h3>Abstraction</h3>
+        <div class="col-7">
+            <p>
+                Abstraction can be thought of as a natural extension of encapsulation.
+                In object-oriented design, programs are often extremely large. And separate objects communicate with
+                each other a lot. So maintaining a large codebase like this for years — with changes along the way — is
+                difficult.
+                Abstraction is a concept aiming to ease this problem.
+            </p>
+            <p>
+                Think — a coffee machine. It does a lot of stuff and makes quirky noises under the hood. But all you
+                have to do is put in coffee and press a button. In our calculator example we only called the addition,
+                subtraction, multiplication and division function, but we don't care how to realize it.
+            </p>
+            <p>We can see the image which shows on right, none of these functions have the true logic to realize the
+                function itself but to call a static function which from another class. (To know static function see
+                below
+                <a href="#static">Static method</a> part)</p>
+        </div>
+        <div class="col">
+            <img src="{{ url_for('static', filename='images/Abstraction.png') }}" alt="">
+        </div>
+
+        <!-- Inheritance -->
+        <h3>Inheritance</h3>
+        <p>
+            The concept of the inheritance is very easy to understand. There are two classes one is the parent class
+            and another is the child class (subclass) of the father class. In reality, the children will inherit
+            some biology feature from their parents. Similar as reality in OOP can inherit all the features from it
+            parent class (super class), and it also can have its own features.
+        </p>
+        <div class="row" style="margin-bottom: 10px">
+            <div class="col-6">
+                <h5>parent</h5>
+                <img src="{{ url_for('static', filename='images/parent.png') }}" alt="">
+            </div>
+            <div class="col-6">
+                <h5>child</h5>
+                <img src="{{ url_for('static', filename='images/child.png') }}" alt="">
+            </div>
+
+        </div>
+
+        <!-- Polymorphism -->
+        <h3>Polymorphism</h3>
+        <p>
+            Polymorphism means "many shapes" in Greek. It's the extension of inheritance. So what is Polymorphism? Take
+            a simple example, we know cars right? There are plenty kind of car around the world such as Track, Bus, SUV
+            etc. Let's take car as a parent class and let Track, Bus, SUV to inherit from car class, and the Track, the
+            Bus, the SUV are called the polymorphism of the car.
+        </p>
+        <p>
+            In our calculator there is a parent class Calculation and four other class which are inherited from the
+            Calculation class which named as Addition, Subtraction, Multiplication and Division each one of those have
+            different function. In here Addition is a Calculation and Subtraction is another one Calculation so this is
+            called polymorphism
+        </p>
+        <div class="col-6">
+            <img src="{{ url_for('static', filename='images/Polymorphism1.png') }}" alt="">
+        </div>
+        <div class="col-6">
+            <img src="{{ url_for('static', filename='images/Polymorphism2.png') }}" alt="">
+        </div>
+
+        <h2>Terminology of OOP</h2>
+        <p>
+            There are some terminology of the OOP which can help you to understand the Object-oriented program and
+            communicate with the specialist.
+        </p>
+        <!-- Class-->
+        <h3>Class</h3>
+        <p>
+            A class is a collection of objects. A class contains the blueprints or the prototype from which the objects
+            are being created. It is a logical entity that contains some attributes and methods.
+        </p>
+        <p>
+            To understand the need for creating a class let’s consider an example, let’s say you wanted to track the
+            number of dogs that may have different attributes like breed, age. If a list is used, the first element
+            could be the dog’s breed while the second element could represent its age. Let’s suppose there are 100
+            different dogs, then how would you know which element is supposed to be which? What if you wanted to add
+            other properties to these dogs? This lacks organization and it’s the exact need for classes.
+        </p>
+        <!-- Object -->
+        <h3>Object (Instance)</h3>
+        <p>
+            The object is an entity that has a state and behavior associated with it. It may be any real-world object
+            like a mouse, keyboard, chair, table, pen, etc. Integers, strings, floating-point numbers, even arrays, and
+            dictionaries, are all objects. More specifically, any single integer or any single string is an object. The
+            number 12 is an object, the string “Hello, world” is an object, a list is an object that can hold other
+            objects, and so on. You’ve been using objects all along and may not even realize it.
+        </p>
+        <!-- constructor -->
+        <h3>Constructor</h3>
+        <div class="col-5">
+            <p>
+                A constructor is a method that a class to create an object or an instance. You can identify specific
+                data
+                type which called type hint that transfer into the class and to generate an instance to avoid the data
+                type error which caused
+                by transfer wrong data type into the object.
+            </p>
+            <p>
+                From the image you could see a parameter called tuple_list, next the with the parameter you can see a
+                blue colored word called tuple which illustrate the tuple_list is a tuple data type.
+            </p>
+        </div>
+        <div class="col">
+            <img src="{{ url_for('static', filename='images/constractor.png') }}" alt="">
+        </div>
+
+        <!-- Static method -->
+        <h3 id="static">Static method</h3>
+        <div class="col-7">
+            <p>
+                A Static method are also called static function or static method is the function that can be called
+                directly with creating the object
+                which the main difference between the static method and normal method, to define a static method in
+                python we just need an annotation which is @staticmethod before the method as the image on the right
+                shows.
+            </p>
+        </div>
+        <div class="col">
+            <img src="{{ url_for('static', filename='images/staticFunction.png') }}" alt="">
+        </div>
+
+        <h3>Type cast</h3>
+        <div class="col-6">
+            <p>
+                In Python you can use type cast to force data type parse to another data type for example Integer can
+                parse to Float by using the code like image shows.
+            </p>
+            <p><a href="https://www.w3schools.com/python/python_casting.asp">click here for more example</a></p>
+        </div>
+    <div class="col">
+        <img src="{{ url_for('static', filename='images/typeCast.png') }}" alt="">
+    </div>
+
+
+    </div>
+{% endblock %}

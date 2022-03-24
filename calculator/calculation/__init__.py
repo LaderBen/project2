@@ -53,9 +53,8 @@ class Multiplication(Calculation):
             result = Multiply.multiply(result, i)
         return result
 
-
-class Divition(Calculation):
-    """divition calculation class"""
+class Division(Calculation):
+    """division calculation class"""
 
     def get_result(self):
         result = self.values[0]
@@ -65,3 +64,6 @@ class Divition(Calculation):
             except:
                 return result
         return result
+
+data_int = 1
+data_float = float(data_int)

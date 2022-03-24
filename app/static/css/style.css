@@ -8,6 +8,7 @@ font-size: 100%;
 
 .underline {
     border-bottom: 1px solid black;
+    padding-bottom: 10px;
 }
 
 .codeContainer{
