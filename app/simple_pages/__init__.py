@@ -9,29 +9,26 @@ simple_pages = Blueprint('simple_page', __name__,
 @simple_pages.route('/<page>')
 def show(page):
     try:
-        i, g, d, f, c, o = highlight(page)
-        return render_template('%s.html' % page, name="Benchuan's", index=i, git=g, docker=d, flask=f, CICD=c, OOPs =o)
+        i = highlight(page)
+        return render_template('%s.html' % page, name="Benchuan's", page_highlight=i)
     except TemplateNotFound:
         abort(404)
 
 
 def highlight(page):
-    index = False
-    git = False
-    docker = False
-    flask = False
-    CICD = False
-    OOPs = False
+    result = 0
     if page == 'index':
-        index = True
+        result = 1
     elif page == 'git':
-        git = True
+        result = 2
     elif page == 'docker':
-        docker = True
+        result = 3
     elif page == 'flask':
-        flask = True
+        result = 4
     elif page == 'CICD':
-        CICD = True
+        result = 5
     elif page == 'OOPs':
-        OOPs = True
-    return index, git, docker, flask, CICD, OOPs
+        result = 6
+    elif page == 'SOLID':
+        result = 7
+    return result
