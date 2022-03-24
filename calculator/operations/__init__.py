@@ -28,7 +28,7 @@ class Multiply:
         return value_1 * value_2
 
 class Divide:
-    """This is the Divition class"""
+    """This is the Division class"""
 
     @staticmethod
     def divide(value_1,value_2):

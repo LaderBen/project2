@@ -6,6 +6,10 @@ class Calculator:
     """ This is the default result property"""
     result = 0
 
+    def get_result(self):
+        """ This is the get result method"""
+        return self.result
+
     def add(self, value_1):
         """ This is the add method"""
         self.result = Add.add(self.result, value_1)
@@ -24,8 +28,4 @@ class Calculator:
     def divide(self, value_1, value_2):
         """This is the divide method"""
         self.result = Divide.divide(value_1, value_2)
-        return self.result
-
-    def get_result(self):
-        """ This is the get result method"""
         return self.result

@@ -2,32 +2,33 @@ from flask import Blueprint, render_template, abort
 from jinja2 import TemplateNotFound
 
 simple_pages = Blueprint('simple_page', __name__,
-                        template_folder='templates',static_folder='static')
+                         template_folder='templates', static_folder='static')
 
 
 @simple_pages.route('/', defaults={'page': 'index'})
 @simple_pages.route('/<page>')
 def show(page):
     try:
-        i,g,d,f,c = highlight(page)
-        return render_template('%s.html' % page, name="Benchuan's", index=i,git=g,docker=d,flask=f,CICD=c)
+        i = highlight(page)
+        return render_template('%s.html' % page, name="Benchuan's", page_highlight=i)
     except TemplateNotFound:
         abort(404)
 
+
 def highlight(page):
-    index = False
-    git = False
-    docker = False
-    flask = False
-    CICD = False
+    result = 0
     if page == 'index':
-        index = True
+        result = 1
     elif page == 'git':
-        git= True
+        result = 2
     elif page == 'docker':
-        docker = True
+        result = 3
     elif page == 'flask':
-        flask = True
+        result = 4
     elif page == 'CICD':
-        CICD = True
-    return  index,git,docker,flask,CICD
+        result = 5
+    elif page == 'OOPs':
+        result = 6
+    elif page == 'SOLID':
+        result = 7
+    return result
