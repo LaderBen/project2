@@ -16,19 +16,21 @@ def show(page):
 
 
 def highlight(page):
-    result = 0
     if page == 'index':
-        result = 1
+        return 1
     elif page == 'git':
-        result = 2
+        return 2
     elif page == 'docker':
-        result = 3
+        return 3
     elif page == 'flask':
-        result = 4
+        return 4
     elif page == 'CICD':
-        result = 5
+        return 5
     elif page == 'OOPs':
-        result = 6
+        return 6
     elif page == 'SOLID':
-        result = 7
-    return result
+        return 7
+    elif page == 'AAA':
+        return 8
+    elif page == 'pylint':
+        return 9

@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1 class="underline">Arrange-Act-Assert Testing</h1>
+    <div class="col-8">
+        <p>
+            A test is a procedure that exercises a behavior to determine if the behavior functions correctly. There are
+            several different kinds of tests, like unit tests, integration tests, or end-to-end tests, but all
+            functional
+            tests do the same basic thing: they try something and report PASS or FAIL.
+        </p>
+        <p>
+            Testing provides an empirical feedback loop for development. That’s how testing keeps us safe. With tests,
+            we
+            know when things break. Without tests, coding can be dangerous. We don’t want to deploy big ol’ bugs!
+        </p>
+        <p>
+            So, if we intend to spend time writing tests, how can we write good tests? There’s a simple but powerful
+            pattern
+            I like to follow: Arrange-Act-Assert.
+        </p>
+    </div>
+
+    <h2>The Pattern</h2>
+    <div class="col-8">
+        <p>
+            1. Arrange inputs and targets. Arrange steps should set up the test case. Does the test require any objects
+            or
+            special settings? Does it need to prep a database? Does it need to log into a web app? Handle all of these
+            operations at the start of the test.
+        </p>
+        <p>
+            2. Act on the target behavior. Act steps should cover the main thing to be tested. This could be calling a
+            function or method, calling a REST API, or interacting with a web page. Keep actions focused on the target
+            behavior.
+        </p>
+        <p>
+            3. Assert expected outcomes. Act steps should elicit some sort of response. Assert steps verify the goodness
+            or
+            badness of that response. Sometimes, assertions are as simple as checking numeric or string values. Other
+            times,
+            they may require checking multiple facets of a system. Assertions will ultimately determine if the test
+            passes
+            or fails.
+        </p>
+    </div>
+    <h2>Unit Testing</h2>
+    <div class="col-8">
+        <p>Here's a unit test from my calculator program:</p>
+        <img src="{{ url_for('static', filename='images/code/unitTest.png') }}" alt="" style="margin-bottom: 10px">
+        <p>
+            The Arrange step creates a calculator instance named cal for testing.
+        </p>
+        <p>
+            The Act step calls the "multiply" function, to call this function we need to parse two parameters to is,
+            and it will return an answer and store it to a variable named "ans".
+        </p>
+        <p>
+            The Assert step verifies that "ans" is a correct one
+        </p>
+    </div>
+    <h2>Feature Testing</h2>
+    <div class="col-8" style="margin-bottom: 10px">
+        <p>
+            In some web development case, we can use the feature testing for example weather my web page could be
+            received by my user. Here is the example code below
+        </p>
+        <img src="{{ url_for('static', filename='images/code/featureTest.png') }}" alt="">
+    </div>
+    <h2>More Advice</h2>
+    <div class="col-8" >
+        <p>
+            Arrange-Act-Assert is powerful because it is simple. It forces tests to focus on independent, individual
+            behaviors. It separates setup actions from the main actions. It requires test to make verifications and not
+            merely run through motions. Notice how the pattern is not Arrange-Act-Assert-Act-Assert – subsequent actions
+            and assertions belong in separate tests! Arrange-Act-Assert is a great pattern to follow for writing good
+            functional tests.
+        </p>
+    </div>
+
+
+{% endblock %}
