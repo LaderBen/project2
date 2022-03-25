@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-<!--Index Page-->
+    <!--Index Page-->
     <!-- Carousel -->
     <div class="row border border-primary">
         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
@@ -12,7 +12,8 @@
                 </div>
                 <div class="carousel-item active">
                     <a href="/docker">
-                        <img src="{{ url_for('static', filename='images/docker.png') }}" class="d-block w-100" alt="...">
+                        <img src="{{ url_for('static', filename='images/docker.png') }}" class="d-block w-100"
+                             alt="...">
                     </a>
                 </div>
                 <div class="carousel-item">
@@ -68,7 +69,7 @@
                 </div>
             </div>
         </div>
-    <div class="col">
+        <div class="col">
             <div class="card" style="width: 18rem;">
                 <div class="card-body">
                     <h5 class="card-title">CI/CD</h5>
@@ -79,4 +80,20 @@
         </div>
     </div>
     <!-- Card -->
+    <h2>About me</h2>
+    <p>
+        I'm Benchuan Xu, one of the master student from NJIT majored in Computer Science. I have some experience on
+        Java, Python, JavaScript, HTML, CSS, C# and C++.
+    </p>
+    <p>
+        For the framework I know about Spring framework which is a powerful framework for Java backend. I used to use
+        this framework to develop my own website which is to share some of my personal hobby. And also I have some
+        experience with front end framework like Vue. I was worked in a China's tech company in where I came to know
+        about the Vue and did a data visualize front end project by using Three.js.
+    </p>
+    <p>
+        This website is to share some of my knowledge to help a program beginner to familiar with what the program it
+        is. Hope all of my article is helpful to you.
+    </p>
+
 {% endblock %}
