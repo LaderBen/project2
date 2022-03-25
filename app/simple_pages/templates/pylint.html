@@ -1,4 +1,51 @@
 {% extends "base.html" %}
 {% block content %}
-    pylint
+    <h1 class="underline">Pylint</h1>
+    <h2>Introduction</h2>
+    <div class="col-8">
+        <p>
+            Pylint is a tool that checks for errors in Python code, tries to enforce a coding standard and looks for
+            code smells. It can also look for certain type errors, it can recommend suggestions about how particular
+            blocks can be refactored and can offer you details about the code's complexity.
+        </p>
+        <p>
+            Other similar projects would include pychecker (now defunct), pyflakes, flake8, and mypy. The default coding
+            style used by Pylint is close to PEP 8.
+        </p>
+    </div>
+    <h2>Usage</h2>
+    <div class="col-8">
+    <p>
+        You can use following steps to test and linting your whole python project. <br>
+        1. open a Terminal in your python project root directory. <br>
+        2. In the Terminal input the commandline below and press the enter <br>
+        <div class="codeContainer">
+            pytest --pylint
+        </div><br>
+        3. Check the output and correct the error file that displayed in the output. <br>
+        4. After correct the error redo step 2 and 3 until all file passed. If all goes will you will see the result as following image.
+        <div class="col-8">
+            <img src="{{ url_for('static', filename='images/code/pylint.png') }}" alt="">
+
+        </div>
+    </p>
+    </div>
+    <h2>PEP 8</h2>
+    <div class="col-8">
+        <p>
+            PEP 8, sometimes spelled PEP8 or PEP-8, is a document that provides guidelines and best practices on how to
+            write Python code. It was written in 2001 by Guido van Rossum, Barry Warsaw, and Nick Coghlan. The primary
+            focus of PEP 8 is to improve the readability and consistency of Python code.
+        </p>
+        <p>
+            PEP stands for Python Enhancement Proposal, and there are several of them. A PEP is a document that
+            describes new features proposed for Python and documents aspects of Python, like design and style, for the
+            community.
+        </p>
+        <p>
+            To know more detail about the PEP 8, you can read the full <a href="https://peps.python.org/pep-0008">PEP
+            8</a> documents.
+        </p>
+    </div>
+
 {% endblock %}
