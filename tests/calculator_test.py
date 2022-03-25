@@ -32,8 +32,14 @@ def test_calculator_add_method():
 
 def test_calculator_multiply_method():
     """Testing the multiply function"""
+    # Arrange
     cal = Calculator()
-    assert cal.multiply(1, 1) == 1
+
+    # Act
+    ans = cal.multiply(2,3)
+
+    # Assert
+    assert ans == 6
 
 
 def test_calculator_divide_method():

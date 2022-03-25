@@ -54,8 +54,16 @@
                                 >OOPs</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link {% if page_highlight == 7 %}{{ 'active' }}{% endif %}" href="/OOPs"
-                                >OOPs</a>
+                                <a class="nav-link {% if page_highlight == 7 %}{{ 'active' }}{% endif %}" href="/SOLID"
+                                >SOLID</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link {% if page_highlight == 8 %}{{ 'active' }}{% endif %}" href="/AAA"
+                                >AAA testing</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link {% if page_highlight == 9 %}{{ 'active' }}{% endif %}" href="/pylint"
+                                >Pylint</a>
                             </li>
                         </ul>
                     </div>
@@ -63,7 +71,7 @@
             </nav>
         </header>
     </div>
-    <div class="container">
+    <div class="container" style="margin-bottom: 5%">
         {% block content %}
         {% endblock %}
     </div>
