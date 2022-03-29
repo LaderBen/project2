@@ -111,6 +111,35 @@
             that the high-level module must not depend on the low-level module, but they should depend on abstractions.
         </p>
     </div>
+    <h2>Design pattern</h2>
+    <div class="col-7">
+        <p>
+            Design patterns are typical solutions to commonly occurring problems in software design. They are like
+            pre-made blueprints that you can customize to solve a recurring design problem in your code.
+        </p>
+        <p>
+            This article covers three main groups of patterns: <br>
+        <ul>
+            <li>Creational patterns provide object creation mechanisms that increase flexibility and reuse of existing
+                code.
+            </li>
+            <li>Structural patterns explain how to assemble objects and classes into larger structures, while keeping
+                these structures flexible and efficient.
+            </li>
+            <li>Behavioral patterns take care of effective communication and the assignment of responsibilities between
+                objects.
+            </li>
+        </ul>
+        </p>
+        <p>
+            Here is an example of using factory method which is one of the method of creational design patterns in our calculator program:
+        </p>
+        <img src="{{ url_for('static', filename='images/code/factoryMethod.png') }}" alt="">
+    <p>
+        This code is to provides an interface for creating objects in superclass. <br>
+        There are many other design patterns <a href="https://refactoring.guru/design-patterns/creational-patterns">click here</a> to know more detail.
+    </p>
+    </div>
 
 
 {% endblock %}
